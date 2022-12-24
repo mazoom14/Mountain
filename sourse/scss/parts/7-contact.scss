@@ -1,0 +1,115 @@
+//Contact
+
+.contact { 
+   padding: 140px 0;
+   @include adaptiveValue("padding-top", 140, 50, 0, 1920, 320);
+   @include adaptiveValue("padding-bottom", 140, 50, 0, 1920, 320);
+
+   // .contact__container
+
+   &__container {
+      display: flex;
+      gap: 60px;
+      align-items: center;
+
+   }
+
+   // .contact__map
+
+   &__map {
+      flex: 0 0 50%;
+      & img {
+         max-width: 100%;
+      }
+      transform: scale(0);
+      opacity: 0;
+      transition: all 0.4s ease 0.4s;
+      &.activeAnim{
+         transform: scale(1);
+         opacity: 1;
+      } 
+   }
+
+   // .contact__body
+
+   &__body {
+   }
+}
+.contact-body {
+
+   // .contact-body__title
+
+   &__title {
+      padding-bottom: 60px;
+      @include adaptiveValue("padding-bottom", 60, 30, 0, 1920, 320);
+      
+      transform: translate(0, 40%);
+      opacity: 0;
+      transition: all 0.4s ease 0.2s;
+      &.activeAnim{
+         transform: translate(0);
+         opacity: 1;
+      }
+
+   }
+
+   // .contact-body__content
+
+   &__content {
+      row-gap: 60px;
+      & div:not(:last-child, :first-child) {
+         padding-bottom: 20px;
+      }
+      & p {
+         padding: 0px 0px 10px 0px;
+         line-height: $lh3;
+         font-size: $fz2;
+         color: $black;
+      }
+      & h1,a {
+         line-height: $lh2;
+         font-size: $fz3;
+         color: $black;
+         font-weight: 500;
+         padding: 0px 0px 20px 0px;
+      }
+   }
+	.contact-body__adress, .contact-body__phone, .contact-body__email, .contact-body__soc-net {
+      transform: translate(0, 40%);
+      opacity: 0;
+      transition: all 0.4s ease 0.4s;
+      &.activeAnim{
+         transform: translate(0);
+         opacity: 1;
+      }
+   }
+
+   // .contact-body__soc-net
+
+   &__soc-net {  
+   }
+   &__soc-net-images {
+      display: flex;
+      gap: 33px;
+   }
+}
+
+@media (max-width: $tablet){
+   .contact-body{
+      & *{
+         text-align: center;
+         justify-content: center;
+      }
+   }
+   .contact__container { 
+      display: flex;
+      flex-direction: column;
+   }
+   .contact__map {
+      order: 2;
+   }
+   .contact__body {
+      order: 1;
+   }
+
+}

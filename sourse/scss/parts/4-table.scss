@@ -1,0 +1,102 @@
+//Table
+.table {
+   padding: 100px 0;
+   @include adaptiveValue("padding-top", 100, 30, 0, 1920, 320);
+   @include adaptiveValue("padding-bottom", 100, 50, 0, 1920, 320);
+   background: url(/img/Main/Table-img.jpg) no-repeat center;
+   background-size: cover;
+  
+   // .table__container
+
+   &__container {
+      display: flex;
+      flex-direction: column;
+   }
+
+   // .table__text
+
+   &__text {
+      max-width: 250px;
+      margin: 0 auto; 
+   }
+   // .table__title
+
+   &__title {
+      text-align: center;
+      transform: translate(0, 40%);
+      opacity: 0;
+      transition: all 0.4s ease 0.2s;
+      &.activeAnim{
+         transform: translate(0);
+         opacity: 1;
+      }
+   }
+
+   // .table__subtitle
+
+   &__subtitle {
+      text-align: center;
+      padding: 25px 0 35px 0;
+      font-size: $fz2;
+
+      transform: translate(0, 40%);
+      opacity: 0;
+      transition: all 0.4s ease 0.3s;
+      &.activeAnim{
+         transform: translate(0);
+         opacity: 1;
+      }
+
+   }
+
+   // .table__form-table
+
+   &__form-table {
+      margin: 0 auto; 
+
+      transform: scale(0);
+      opacity: 0;
+      transition: all 0.4s ease 0.4s;
+      &.activeAnim{
+         transform: scale(1);
+         opacity: 1;
+      }
+      
+      & table {
+         border-spacing: 0px;
+      }
+      & tr {
+      }
+      & td {
+         padding: 25px 45px;
+         font-size: $fz3;
+         border-bottom: 1px solid $grey;
+         @include adaptiveValue("padding-left", 45, 5, 0, 1200, 320);
+         @include adaptiveValue("padding-right", 45, 5, 0, 1200, 320);
+         @include adaptiveValue("font-size", 22, 16, 0, 1200, 320);
+      }
+   }
+   &__form-button{
+      padding-top: 50px;
+      
+      transform: scale(0);
+      opacity: 0;
+      transition: all 0.4s ease 0.1s;
+      &.activeAnim{
+         transform: scale(1);
+         opacity: 1;
+      }
+
+   }
+}
+.table-name{
+   & td {
+      border-bottom: 1px solid $grey-black;
+      padding: 15px 45px;
+      @include adaptiveValue("font-size", 16, 14, 0, 1200, 320);
+      @include adaptiveValue("padding-left", 45, 5, 0, 1200, 320);
+      @include adaptiveValue("padding-right", 45, 5, 0, 1200, 320);
+      color: $grey-black;
+   }
+}
+

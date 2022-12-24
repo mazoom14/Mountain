@@ -1,0 +1,160 @@
+//Choice
+@media (min-width:$tablet){
+   .choice {
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      }
+
+   .choice__body {
+      width: 50%;
+   }
+}
+.choice {
+   background-color: $black;
+   @media (max-width: $tablet){
+      padding: 85px 0;
+   }
+
+   &__content {
+      flex: 0 0 100%;
+   }
+   &__container {
+   }
+   &__body {
+      padding: 0 0 85px 0;
+      @media (min-width: $tablet){
+         padding: 0 60px 85px 0;
+         @include adaptiveValue("padding-right", 60, 20, 0, 1920, 767);
+      }
+   
+   }
+   &__title {
+      font-family: 'Oswald';
+      font-weight: 600;
+      font-size: $fz5;
+      @media (max-width: $tablet){
+         text-align: center;
+      }
+      
+      transform: translate(0, 40%);
+      opacity: 0;
+      transition: all 0.4s ease 0.3s;
+      &.activeAnim{
+         transform: translate(0);
+         opacity: 1;
+      }
+   }
+   &__subtitle {
+      padding: 40px 0 30px 0;
+      line-height: $lh3;
+      font-size: $fz2;
+      @media (max-width: $tablet){
+         text-align: center;
+      }
+
+      transform: translate(0, 40%);
+      opacity: 0;
+      transition: all 0.4s ease 0.4s;
+      &.activeAnim{
+         transform: translate(0);
+         opacity: 1;
+      }
+
+   }
+   &__form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      & *{
+         background-color: transparent;
+         padding: 15px 0; 
+         line-height: $lh3;
+         color: $grey-light;
+         border-bottom: 1px solid $grey-black;
+      }
+
+      transform: translate(0, 40%);
+      opacity: 0;
+      transition: all 0.4s ease 0.5s;
+      &.activeAnim{
+         transform: translate(0);
+         opacity: 1;
+      }
+
+      &__form-name {
+
+         }
+      &__form-phone {
+
+         }
+      &__form-email {
+
+       }
+   }
+   &__button-container {
+      padding: 45px 0 25px 0;
+      
+      transform: translate(0, 40%);
+      opacity: 0;
+      transition: all 0.4s ease 0.6s;
+      &.activeAnim{
+         transform: translate(0);
+         opacity: 1;
+      }
+
+   }
+
+   &__text {
+      font-size: $fz0;
+      line-height: $lh2;
+
+      transform: translate(0, 40%);
+      opacity: 0;
+      transition: all 0.4s ease 0.6s;
+      &.activeAnim{
+         transform: translate(0);
+         opacity: 1;
+      }
+
+   }
+   &__image {
+      display: flex;
+      justify-content: center;
+      padding: 0 15px;
+
+      @media (max-width: $tablet){
+         transform: scale(0.2);
+         opacity: 0;
+         transition: all 0.4s ease 0.2s;
+         &.activeAnim{
+            transform: scale(1);
+            opacity: 1;
+         } 
+      }
+
+   }
+   &__image img {
+      max-width: 100%;
+   }
+}
+@media (min-width:$tablet){
+   .choice__image {
+      transform: translate(-100%, 0px);
+      flex: 0 0 50%;
+      height: 100ch;
+      position: relative;
+      padding: 0;
+      & img {
+         top: 0;
+         left: 0;
+         height: 100%;
+         width: 100%;
+         object-fit: cover;
+         object-position: center;
+      }
+      
+   }
+}
+
+

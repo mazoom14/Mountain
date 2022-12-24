@@ -1,0 +1,248 @@
+//Popular
+.popular {
+}
+.popular-title {
+   text-align: center;
+   transform: translate(0, 40%);
+   opacity: 0;
+   transition: all 0.4s ease 0.3s;
+   &.activeAnim{
+      transform: translate(0);
+      opacity: 1;
+   }
+}
+.popular-slider-container{
+
+}
+.popular-slider{
+   margin: 0 -15px;
+
+   transform: scale(0);
+   opacity: 0;
+   transition: all 0.4s ease 0.3s;
+   &.activeAnim{
+      transform: scale(1);
+      opacity: 1;
+   }
+
+}
+
+.popular-slide{
+   display: flex;
+   justify-content: center;
+   padding: 0 15px;
+}
+.popular-slide-contant{
+   display: flex;
+   flex-direction: column;
+
+
+   @include adaptiveValue("min-height", 370, 300, 0, 1920, 320);
+   @include adaptiveValue("min-width", 370, 300, 0, 1920, 320);
+
+   padding: 40px;
+   & *{
+      color: $black;
+      background-color: transparent;
+   }
+   &.toor-1 {
+      background: url(/img/Main/Popular/Toor-1.jpg) center no-repeat;
+   }
+   &.toor-2 {
+      background: url(/img/Main/Popular/Toor-2.jpg) center no-repeat;
+   }
+   &.toor-3 {
+      background: url(/img/Main/Popular/Toor-3.jpg) center no-repeat;
+   }
+}  
+
+.popular-top {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   &-position {
+      position: relative;
+      padding-left: 23px;
+      
+      &::before{
+         content:'';
+         position: absolute;
+         background: url(/img/Main/Popular/icons/map.svg) no-repeat;
+         width: 100%;
+         height: 100%;
+         top: 0;
+         left: 0;
+         
+      }
+   }
+   &-select {
+      position: relative;
+      width: 35px;
+      height: 35px;
+      background: rgba(252, 252, 252, 0.4);
+      border-radius: 50%;
+      &::before{
+         content:'';
+         position: absolute;
+         background: url(/img/Main/Popular/icons/select.svg) center no-repeat;
+         width: 100%;
+         height: 100%;
+         top: 0;
+         left: 0;
+         
+      }
+   }
+   
+}
+.popular-main {
+   flex: 1 1 auto;
+}
+.popular-bottom {
+   display: flex;
+   flex-direction: column;
+   row-gap: 25px;
+   justify-self: flex-end;
+   
+   
+   &-title {
+      font-family: 'Oswald';
+      font-weight: 500;
+      font-size: calc($fz3 + 2px);
+   }
+   &-info {
+      margin: 0 -10px;
+      font-size: calc($fz2 + 2px);
+      display: flex;
+      & * {
+         padding: 0 10px;
+         text-align: center;
+         &:not(:last-child){
+            border-right: 1px solid $black;
+         }
+      }
+      &-height {
+      }
+      &-time {
+      }
+      &-price{
+      }
+   }
+   &-level {
+      position: relative;
+      padding-left: 18px;
+
+      &.procent25::before{
+         background: url(/img/Main/Popular/icons/procent25.svg) no-repeat;
+      }
+      &.procent50::before{
+         background: url(/img/Main/Popular/icons/procent50.svg) no-repeat;
+      }
+      &.procent75::before{
+         background: url(/img/Main/Popular/icons/procent75.svg) no-repeat;
+      }
+      &.procent100::before{
+         background: url(/img/Main/Popular/icons/procent100.svg) no-repeat;
+      }
+      &::before{
+         content:'';
+         position: absolute;
+         width: 100%;
+         height: 100%;
+         top: 0;
+         left: 0;
+      }
+
+   }
+}
+
+.popular-slider-container{
+   padding: 80px 0 130px 0;
+   @include adaptiveValue("padding-top", 80, 40, 0, 1920, 320);
+   @include adaptiveValue("padding-bottom", 130, 40, 0, 1920, 320);
+
+   & .popular-slider-buttons{
+      display: flex;
+      gap: 25px;
+      padding-top: 40px;
+      justify-content: end;
+      @media (max-width: 1000px){
+         justify-content: center;
+      }
+      
+      transform: scale(0);
+      opacity: 0;
+      transition: all 0.4s ease 0.2s;
+      &.activeAnim{
+         transform: scale(1);
+         opacity: 1;
+      }
+
+   }
+   /* Стрелка */
+   & button.slick-arrow {
+   }
+   /* Стрелка влево */
+   & button.slick-prev{
+      background: url(/img/Main/Popular/icons/left.svg) center no-repeat;
+      background-color: $grey-light;
+      left: 0;
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+   }
+   /* Стрелка вправо */
+   & button.slick-arrow.slick-next{
+      background: url(/img/Main/Popular/icons/right.svg) center no-repeat;
+      background-color: $grey-light;
+      left: 0;
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+   }
+   /* Стрелка не активная */
+   &.slick-arrow.slick-disabled{
+
+   }
+}
+
+
+/* Основные стили */
+
+/* Слайдер */
+.slick-slider{
+	min-width: 0;
+}
+/* Ограничивающая оболочка */
+.slick-list {
+	overflow: hidden;
+   padding: 0;
+}
+/* Лента слайдов */
+.slick-track{
+   display: flex;
+   justify-content: center;
+}
+
+/* Слайд */
+.slick-slide{}
+/* Слайд активный */
+.slick-slide.slick-active{}
+/* Слайд основной */
+.slick-slide.slick-current{}
+/* Слайд по центру */
+.slick-slide.slick-center{}
+
+/* Стрелка */
+.slick-arrow{}
+/* Стрелка влево */
+.slick-arrow.slick-prev{
+}
+/* Стрелка вправо */
+.slick-arrow.slick-next{}
+/* Стрелка не активная */
+.slick-arrow.slick-disabled{}
+
+/* Точки */
+.slick-dots{}
+.slick-dots li{}
+.slick-dots button{}

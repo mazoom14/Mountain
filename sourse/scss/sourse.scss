@@ -1,0 +1,121 @@
+@use "sass:math";
+@import "nullstyle.scss";
+@import "mixin.scss";
+
+//font-family &display=swap
+@import url(https://fonts.googleapis.com/css?family=Roboto:regular,500&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Oswald:600&display=swap);
+
+
+//fzpx
+   $fz-1: 12px;
+   $fz0: 14px;
+   $fz1: 16px;
+   $fz2: 18px;
+   $fz3: 22px;
+   $fz4: 24px;
+   $fz5: 52px;
+   $fz6: 26px;
+
+//line-height
+   $lh1: 115%;
+   $lh2: 140%;
+   $lh3: 150%;
+
+//colors
+   $light: #FCFCFC;
+   $light-hover: #e3c7c7;
+   $orange: #EC5118;
+   $black: #061B28;
+   $grey-transparent: rgba(252, 252, 252, 0.4);
+   $grey: #A7AEB4;
+   $pink:#f1cece;
+   $grey-black:#45545E;
+   $grey-light:#7E8386;
+
+//Width
+   $mobile: 500px;
+   $tablet: 767px;
+   $laptop: 1024px;
+
+//Container
+[class*="__container"] {
+   max-width: 1170px;
+   margin: 0 auto;
+   padding: 0 15px;
+}
+
+//Comon-style
+body *{
+   font-family: "Roboto";
+   color: $light;
+   font-size: $fz1;
+   line-height: $lh1;
+   user-select: auto;
+}
+
+//Basic
+.title-black {
+   color: $black;
+   font-family: 'Oswald';
+   font-weight: 600;
+   font-size: $fz5;
+   @include adaptiveValue("font-size", 52, 42, 0, 767, 320);
+}
+.title-white {
+   color: $light;
+   font-family: 'Oswald';
+   font-weight: 600;
+   font-size: $fz5;
+   @include adaptiveValue("font-size", 52, 42, 0, 767, 320);
+}
+.button-white {
+   margin: 0 auto;
+}
+.button-white span {
+   display: inline;
+   cursor: pointer;
+   font-weight: 500;
+   padding: 16px 42px;
+   border: 2px solid #FCFCFC;
+   transition: 0.3s all ease-in;
+   &:hover{
+      border: 2px solid $light-hover;
+      transition: 0.5s all ease;
+   }
+}
+.button-orange {
+   cursor: pointer;
+   background-color: $orange;
+   padding: 20px 0;
+   text-align: center;
+   max-width: 100%;
+   font-weight: 500;
+}
+
+//Header
+@import "parts/1-header.scss";
+
+//Toor
+@import "parts/2-toor.scss";
+
+//Popular
+@import "parts/3-popular.scss";
+
+//Table
+@import "parts/4-table.scss";
+
+//Blog
+@import "parts/5-blog.scss";
+
+//Choice
+@import "parts/6-choice.scss";
+//More
+@import "parts/6.1-more.scss";
+
+//Contact
+@import "parts/7-contact.scss";
+
+//Footer
+@import "parts/8-footer.scss";
+

@@ -1,0 +1,85 @@
+//Toor
+.toor {
+   padding: 140px 0;
+   @include adaptiveValue("padding-top", 140, 40, 0, 1920, 320);
+   @include adaptiveValue("padding-bottom", 140, 40, 0, 1920, 320);
+}
+.toor__container {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   gap: 35px 0;
+}
+.toor__conent {
+   display: flex;
+   flex-direction: column;
+   max-width: 480px;
+   row-gap: 50px;
+}
+.toor__title {
+   font-family: 'Oswald';
+   font-weight: 600;
+   font-size: $fz5;
+   @include adaptiveValue("font-size", 52, 42, 0, 1023, 320);
+   line-height: $lh1;
+   color: $black;
+   
+   transform: translate(0, 40%);
+   opacity: 0;
+   transition: all 0.4s ease 0.2s;
+   &.activeAnim{
+      transform: translate(0);
+      opacity: 1;
+   }
+}  
+.toor__description {
+   display: flex;
+   flex-direction: column;
+   gap: 26px 0;
+   max-width: 350px;
+   & p{
+      font-size: $fz2;
+      @include adaptiveValue("font-size", 18, 14, 0, 1023, 320);
+      color: $black;
+      transform: translate(0, 40%);
+      opacity: 0;
+      transition: all 0.4s ease 0.3s;
+      &.activeAnim{
+         transform: translate(0);
+         opacity: 1;
+      }
+   }
+}
+.toor__map {
+
+   transform: scale(0);
+   opacity: 0;
+   transition: all 0.4s ease 0.4s;
+   &.activeAnim{
+      transform: scale(1);
+      opacity: 1;
+   }
+
+}
+.toor__map-img {
+   max-width: 100%;
+}
+@media (max-width: $laptop){
+   .toor__container {
+      display: flex;
+      flex-direction: column;
+   }
+   .toor__conent {
+      max-width: 600px;
+      text-align: center;
+      row-gap:50px;
+      @include adaptiveValue("row-gap", 50, 22, 0, 1023, 320);
+   }
+   .toor__description{
+      margin: 0 auto;
+   }
+   .toor__map-img{
+      max-width: 100%;
+   }
+}
+
